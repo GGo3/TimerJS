@@ -1,0 +1,89 @@
+@font-face {
+	font-family: 'fontello';
+	src: url('../fonts/fontello.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+  }
+
+html{
+	box-sizing: border-box;
+}
+*, *::before, *::after{
+	box-sizing: inherit;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(365deg);
+  }
+}
+
+.timer__inner {
+	width: 300px;
+	height: 250px;
+	margin: 200px auto;
+	padding: 45px;
+}
+.timer__main {
+	position: relative;
+	width: 190px;
+	height: 80px;
+	border: 1px solid black;
+
+}
+.timer__main-clock {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 58px;
+	padding-top: 5px;
+	
+}
+.timer__clock-animation {
+	animation: clock 2s infinite linear;
+}
+@keyframes clock {
+  50% {
+    color: red;
+  }
+}
+
+.timer-btn {
+	width: 190px;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+input {
+	width: 85px;
+	height: 35px;
+	padding-left: 10px;
+}
+button {
+	width: 85px;
+	height: 35px;
+  margin-right: 0px;
+}
+button::before {
+	content: '\e800';
+	font-family: 'fontello';
+}
+.arrow {
+	position: absolute;
+	right: 5px;
+	top: 23px;
+	
+}
+.arrow::after {
+	content: '\e832';
+	font-family: 'fontello';
+  font-size: 32px;
+  
+}
+
+
+
+.animate-spin {
+	animation: spin 2s infinite linear;
+  }
+
