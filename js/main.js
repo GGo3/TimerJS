@@ -15,7 +15,11 @@ const checkSetTime = () => {
   animatedArrowEl.classList.add('animate-spin');
   const getTimeRemaining = () => {
     timerTime = timerTime - 1000;
+    let timerTemp = Math.floor(timerTime / 1000 / 60);
     timerMinutes = Math.floor((timerTime / 1000 / 60) % 60);
+    if (timerTemp > 60 && timerTemp < 100) {
+      timerMinutes += 60;
+    }
     timerSeconds = Math.floor((timerTime / 1000) % 60);
     if (timerMinutes < 10) {
       timerMinutes = `0${timerMinutes}`;
