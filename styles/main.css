@@ -30,7 +30,7 @@ html {
 }
 
 .timer__inner {
-  width: 300px;
+  width: 280px;
   height: 250px;
   margin: 200px auto;
   padding: 45px;
@@ -38,7 +38,7 @@ html {
 
 .timer__main {
   position: relative;
-  width: 190px;
+  width: 270px;
   height: 80px;
   border: 1px solid black;
 }
@@ -67,7 +67,7 @@ html {
 }
 
 .timer-btn {
-  width: 190px;
+  width: 270px;
   height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -82,13 +82,13 @@ html {
 }
 
 input {
-  width: 85px;
+  width: 120px;
   height: 35px;
   padding-left: 10px;
 }
 
 button {
-  width: 85px;
+  width: 120px;
   height: 35px;
   margin-right: 0px;
 }

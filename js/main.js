@@ -4,6 +4,7 @@ const timeInputEl = document.querySelector('.time-inp');
 const playBtnEl = document.querySelector('.play-btn');
 let currentTime = null;
 let timerTime = null;
+let timerHours = null;
 let timerMinutes = null;
 let temerSeconds = null;
 
@@ -15,19 +16,19 @@ const checkSetTime = () => {
   animatedArrowEl.classList.add('animate-spin');
   const getTimeRemaining = () => {
     timerTime = timerTime - 1000;
-    let timerTemp = Math.floor(timerTime / 1000 / 60);
+    timerHours = Math.floor((timerTime / (1000 * 60 * 60) % 24));
     timerMinutes = Math.floor((timerTime / 1000 / 60) % 60);
-    if (timerTemp > 60 && timerTemp < 100) {
-      timerMinutes += 60;
-    }
     timerSeconds = Math.floor((timerTime / 1000) % 60);
+    if (timerHours < 10) {
+      timerHours = `0${timerHours}`;
+    }
     if (timerMinutes < 10) {
       timerMinutes = `0${timerMinutes}`;
     } 
     if (timerSeconds < 10) {
       timerSeconds = `0${timerSeconds}`;
     }
-    timerNumbersEl.innerHTML = `${timerMinutes}:${timerSeconds}`;
+    timerNumbersEl.innerHTML = `${timerHours}:${timerMinutes}:${timerSeconds}`;
     if (timerTime <= 0) {
       animatedArrowEl.classList.remove('animate-spin');
       timerNumbersEl.classList.add('timer__clock-animation');
